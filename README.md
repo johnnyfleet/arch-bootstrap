@@ -17,4 +17,14 @@ Rather than install over and over, I'd like to create a bootstrap script to inst
 - Install key packages
 - Install desktop manager. 
 
+## Getting started
+Ok, first things first. You'll need to download the arch ISO and then boot on a VM. 
+Once booted follow the instructions [on the wiki here](https://wiki.archlinux.org/index.php/Install_from_SSH) to set up remote SSH access. 
+In short: 
+- Boot ISO
+- Check IP `ifconfig`
+- set root password with `passwd`
+- enable ssh with `systemctl enable sshd.service`
 
+## Bootstrap time!
+- Now boot `ssh root@1<IP> "bash -s" < arch-bootstrap.sh`
