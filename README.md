@@ -1,5 +1,5 @@
 # Arch-Bootstrap
-This project aims to bootstrap arch linux. Basically giving me a chance to learn more about linux. I'm quite impressed with my knowledge so far asI can at least understand what a problem might be and how I might google to overcome them on arch. Arch seems to have a good amount og wiki info and community support and while it won't be my main device I certainly like the idea of it. 
+This project aims to bootstrap arch linux. Basically giving me a chance to learn more about linux. I'm quite impressed with my knowledge so far as I can at least understand what a problem might be and how I might google to overcome them on arch. Arch seems to have a good amount og wiki info and community support and while it won't be my main device I certainly like the idea of it. 
 
 ## First steps
 My first point of learning was to install arch via a combo of the following articles:
