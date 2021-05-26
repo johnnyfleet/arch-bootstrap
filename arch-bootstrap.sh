@@ -50,7 +50,7 @@ mkdir /mnt/home
 mount /dev/vda2 /mnt/home
 
 echo install the system
-pacstrap /mnt base dhcpcd nano net-tools 
+pacstrap /mnt base linux linux-firmware dhcpcd nano net-tools 
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
