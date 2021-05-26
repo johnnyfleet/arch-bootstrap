@@ -28,6 +28,7 @@ Ok, first things first. You'll need to download the arch ISO and then boot on a 
 Once booted follow the instructions [on the wiki here](https://wiki.archlinux.org/index.php/Install_from_SSH) to set up remote SSH access.
 In short:
 
+- Setup a blank VM with a **30GB** hard disk drive (else the partitioning disk step could fail)
 - Boot ISO
 - Check IP `ifconfig`
 - set root password with `passwd`
@@ -36,3 +37,13 @@ In short:
 ## Bootstrap time
 
 - Now boot `ssh root@1<IP> "bash -s" < arch-bootstrap.sh`
+
+## Reinstall
+
+I haven't yet found a graceful way to have fdisk reinstall over the top in the script. It keeps complaining of existing ext4 signatures which screws up the SED command. 
+
+To workaround it for now I can wipe the disk using 
+
+`dd if=/dev/zero of=/dev/vda bs=1M`
+
+However it can take a *loooonnnnggg* time. 
