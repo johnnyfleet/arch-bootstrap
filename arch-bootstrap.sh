@@ -50,7 +50,7 @@ mkdir /mnt/home
 mount /dev/vda2 /mnt/home
 
 echo install the system
-pacstrap /mnt base linux linux-firmware dhcpcd nano net-tools 
+pacstrap /mnt base linux linux-firmware dhcpcd nano net-tools openssh
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -73,6 +73,7 @@ echo ::1	localhost >> /etc/hosts
 echo 127.0.0.1	ansibletest >> /etc/hosts
 
 systemctl enable dhcpcd
+systemctl enable sshd.service
 
 passwd
 testing
