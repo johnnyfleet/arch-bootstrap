@@ -50,7 +50,7 @@ mkdir /mnt/home
 mount /dev/vda2 /mnt/home
 
 echo install the system
-pacstrap /mnt base linux linux-firmware dhcpcd nano net-tools openssh
+pacstrap /mnt base linux linux-firmware dhcpcd nano net-tools openssh vi sudo
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -75,12 +75,24 @@ echo 127.0.0.1	ansibletest >> /etc/hosts
 systemctl enable dhcpcd
 systemctl enable sshd.service
 
+echo set password for root
 passwd
 testing
 testing
 
+echo setup john as new user
+useradd --create-home john
+passwd john
+testing
+testing
+
+echo add john to sudo group
+usermod --append --groups wheel john
+echo '%wheel ALL=(ALL) ALL' | sudo EDITOR='tee -a' visudo
+
 mkinitcpio -p linux
 
+echo setup grub
 pacman -S --noconfirm grub
 
 grub-install --target=i386-pc /dev/vda
